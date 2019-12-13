@@ -2,14 +2,15 @@
 
 ## Level design
 
+- [] puzzle pathways
 - level complete trigger
 - physics colliders
-- puzzle pathways
 - enemies??
 
 ## Gameplay programming
 
-- Gamepad input
+- [x] Gamepad input
+- [x] directional jump
 - Bounce physics (2D/2.5D)
 - Timer
 - Particles!!
