@@ -158,7 +158,7 @@ namespace Platformer.Mechanics
                             velocity = velocity - projection * currentNormal;
                         }
                     }
-                    else if (currentNormal.x < currentNormal.y)
+                    else if (Mathf.Abs(currentNormal.x) > Mathf.Abs(currentNormal.y))
                     {
                         //We are airborne, but hit something, BOUNCE
                         velocity.x = - velocity.x;

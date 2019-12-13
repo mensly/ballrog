@@ -160,9 +160,9 @@ namespace Platformer.Mechanics
             }
 
             if (velocity.x > 0.01f)
-                spriteRenderer.flipX = false;
-            else if (velocity.x < -0.01f)
                 spriteRenderer.flipX = true;
+            else if (velocity.x < -0.01f)
+                spriteRenderer.flipX = false;
 
             //targetVelocity = (move * maxSpeed);
         }
