@@ -160,9 +160,8 @@ namespace Platformer.Mechanics
                     }
                     else
                     {
-                        //We are airborne, but hit something, so cancel vertical up and horizontal velocity.
+                        //We are airborne, but hit something, BOUNCE
                         velocity.x = - velocity.x;
-                        //velocity.y = Mathf.Min(velocity.y, 0);
                     }
                     //remove shellDistance from actual move distance.
                     var modifiedDistance = hitBuffer[i].distance - shellRadius;

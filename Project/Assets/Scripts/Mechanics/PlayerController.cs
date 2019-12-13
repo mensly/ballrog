@@ -69,8 +69,9 @@ namespace Platformer.Mechanics
                     charging = true;
                     stopJump = true;
                     Schedule<PlayerStopJump>().player = this;
-                    jumpTakeoff.x = jumpH;
-                    jumpTakeoff.y = jumpV;
+                    float smooth = 0.8f;
+                    jumpTakeoff.x = jumpTakeoff.x * smooth + jumpH * (1 - smooth);
+                    jumpTakeoff.y = jumpTakeoff.y * smooth + jumpV * (1 - smooth);
                 }
                 else if (charging)
                 {
