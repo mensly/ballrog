@@ -25,7 +25,8 @@ namespace Platformer.Mechanics
         /// <summary>
         /// Initial jump velocity at the start of a jump.
         /// </summary>
-        public float jumpTakeOffSpeed = 7;
+        public float jumpTakeOffSpeed = 10;
+        public Vector2 jumpTakeoff = new Vector2();
 
         public JumpState jumpState = JumpState.Grounded;
         private bool stopJump;
@@ -40,7 +41,7 @@ namespace Platformer.Mechanics
         internal Animator animator;
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
         bool charging;
-        float charge;
+        float charge = 0.5f;
 
         public Bounds Bounds => collider2d.bounds;
 
@@ -68,11 +69,17 @@ namespace Platformer.Mechanics
                     charging = true;
                     stopJump = true;
                     Schedule<PlayerStopJump>().player = this;
+                    jumpTakeoff.x = jumpH;
+                    jumpTakeoff.y = jumpV;
                 }
                 else if (charging)
                 {
                     jumpState = JumpState.PrepareToJump;
                     charging = false;
+                }
+                else
+                {
+                    charge = 0.5f;
                 }
                 //else
                 //{
@@ -122,7 +129,10 @@ namespace Platformer.Mechanics
         {
             if (jump && IsGrounded)
             {
-                velocity.y = jumpTakeOffSpeed * model.jumpModifier;
+                // start jump
+                velocity = (-jumpTakeoff).normalized * Mathf.Min(charge * jumpTakeOffSpeed, jumpTakeOffSpeed * 2) * model.jumpModifier;
+                Debug.Log($"{velocity.x}/{velocity.y}");
+
                 jump = false;
             }
             else if (stopJump)
@@ -131,18 +141,24 @@ namespace Platformer.Mechanics
                 if (velocity.y > 0)
                 {
                     velocity.y = velocity.y * model.jumpDeceleration;
+                    velocity.x = velocity.x * model.jumpDeceleration;
                 }
             }
+            else if (jumpState == JumpState.Grounded)
+            {
+                // walking
+                if (move.x > 0.01f)
+                    spriteRenderer.flipX = false;
+                else if (move.x < -0.01f)
+                    spriteRenderer.flipX = true;
 
-            if (move.x > 0.01f)
-                spriteRenderer.flipX = false;
-            else if (move.x < -0.01f)
-                spriteRenderer.flipX = true;
+                animator.SetBool("grounded", IsGrounded);
+                animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
-            animator.SetBool("grounded", IsGrounded);
-            animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+                velocity.x = move.x * maxSpeed;
+            }
 
-            targetVelocity = move * maxSpeed;
+            //targetVelocity = (move * maxSpeed);
         }
 
         public enum JumpState

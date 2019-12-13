@@ -107,7 +107,7 @@ namespace Platformer.Mechanics
             else
                 velocity += Physics2D.gravity * Time.deltaTime;
 
-            velocity.x = targetVelocity.x;
+            //velocity.x = targetVelocity.x;
 
             IsGrounded = false;
 
