@@ -158,10 +158,14 @@ namespace Platformer.Mechanics
                             velocity = velocity - projection * currentNormal;
                         }
                     }
-                    else
+                    else if (currentNormal.x < currentNormal.y)
                     {
                         //We are airborne, but hit something, BOUNCE
                         velocity.x = - velocity.x;
+                    }
+                    else
+                    {
+                        velocity.y = 0;
                     }
                     //remove shellDistance from actual move distance.
                     var modifiedDistance = hitBuffer[i].distance - shellRadius;
