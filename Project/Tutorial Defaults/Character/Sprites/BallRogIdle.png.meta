@@ -1,0 +1,727 @@
+fileFormatVersion: 2
+guid: 30711b735b4644c67859f2432c95bedf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3374593942963551998
+    second: BallRogIdle_0
+  - first:
+      213: -4350483374771301868
+    second: BallRogIdle_1
+  - first:
+      213: -4399217780683136150
+    second: BallRogIdle_2
+  - first:
+      213: -380203583961592093
+    second: BallRogIdle_3
+  - first:
+      213: -2285988900589544295
+    second: BallRogIdle_4
+  - first:
+      213: -7604844645792793783
+    second: BallRogIdle_5
+  - first:
+      213: 6088786267263728346
+    second: BallRogIdle_6
+  - first:
+      213: 2936201746278588100
+    second: BallRogIdle_7
+  - first:
+      213: 1269652889509788990
+    second: BallRogIdle_8
+  - first:
+      213: -2477705102045047732
+    second: BallRogIdle_9
+  - first:
+      213: -4036722912362889921
+    second: BallRogIdle_10
+  - first:
+      213: 2002687375642758567
+    second: BallRogIdle_11
+  - first:
+      213: 8478091183945368961
+    second: BallRogIdle_12
+  - first:
+      213: 1895617882470081521
+    second: BallRogIdle_13
+  - first:
+      213: 1963034281497022849
+    second: BallRogIdle_14
+  - first:
+      213: -3301795554228234663
+    second: BallRogIdle_15
+  - first:
+      213: -4022453798430354117
+    second: BallRogIdle_16
+  - first:
+      213: 4164588965721147522
+    second: BallRogIdle_17
+  - first:
+      213: -1975772345906387462
+    second: BallRogIdle_18
+  - first:
+      213: -5688833567325097787
+    second: BallRogIdle_19
+  - first:
+      213: -4441421605920651063
+    second: BallRogIdle_20
+  - first:
+      213: 5925509630005222261
+    second: BallRogIdle_21
+  - first:
+      213: 2035428694640579334
+    second: BallRogIdle_22
+  - first:
+      213: -2570588162087542122
+    second: BallRogIdle_23
+  - first:
+      213: -2793005291820109368
+    second: BallRogIdle_24
+  - first:
+      213: -6094755245729916628
+    second: BallRogIdle_25
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BallRogIdle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1212
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9505ef665a45b4235921605d90798f87
+      internalID: -3374593942963551998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_1
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 1212
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ddcd5af806cd4f4c9bfcf21166f6fca
+      internalID: -4350483374771301868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_2
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 1212
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f66c1b541635249d28e5efe9c3c88e81
+      internalID: -4399217780683136150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_3
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1212
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b391517da70d45fab14805193ac17ec
+      internalID: -380203583961592093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_4
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 1212
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89f1ede8766e460d8754890ff102602
+      internalID: -2285988900589544295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_5
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 1214
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e28fcc0c3f4b4fe4858008904d60575
+      internalID: -7604844645792793783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 970
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87c86525cba941aa8378694ce211e33
+      internalID: 6088786267263728346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_7
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 970
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6224dc40ab8e405f9f27de39d6dd129
+      internalID: 2936201746278588100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_8
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 970
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5cb73033ec246d4830dd9966cae63b
+      internalID: 1269652889509788990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_9
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 970
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3e720d9032a646ed959175bde00c4a4
+      internalID: -2477705102045047732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_10
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 970
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3197b52cbb84bd0879b9696e293164
+      internalID: -4036722912362889921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_11
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 970
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4a6de7d258941979dcfc933bb27808
+      internalID: 2002687375642758567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 728
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb8795ce671d48d5bd8daf9666fec87
+      internalID: 8478091183945368961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_13
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 728
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b72a14ef36b42d490b0dcc74989086
+      internalID: 1895617882470081521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_14
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 728
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59a74e3d69ba47dca11f402a65ab986
+      internalID: 1963034281497022849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_15
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 728
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad6800838c904b96a556ecbd359593f
+      internalID: -3301795554228234663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_16
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 728
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fead409c4a4134b4db13ef34402b255d
+      internalID: -4022453798430354117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_17
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 728
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de756c4354c54fa79c26ba456cebd58
+      internalID: 4164588965721147522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 486
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af17765c284354ddc8d0b7b686a775da
+      internalID: -1975772345906387462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_19
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 486
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b652deda4157b4a6cbfff2715b9c7a8e
+      internalID: -5688833567325097787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_20
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 486
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b011524bb084ab3b3f230a6383eaea
+      internalID: -4441421605920651063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_21
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 486
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2873554dbd45c4c43b551f417f22377d
+      internalID: 5925509630005222261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_22
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 486
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15fd1137997d4f2d8d35e6559a5fb1b
+      internalID: 2035428694640579334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_23
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 486
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 950ccd9578dc64fe091edd445fa99876
+      internalID: -2570588162087542122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 244
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae1deb30b03074ba5b52942ea29fe6a2
+      internalID: -2793005291820109368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BallRogIdle_25
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 244
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c09aa892d3254dcaa39fb45940328e8
+      internalID: -6094755245729916628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

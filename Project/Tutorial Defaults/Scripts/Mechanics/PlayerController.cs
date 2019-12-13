@@ -59,18 +59,24 @@ namespace Platformer.Mechanics
             if (controlEnabled)
             {
                 move.x = Input.GetAxis("Horizontal");
+                if (Mathf.Abs(move.x) < 0.2f)
+                {
+                    move.x = 0;
+                }
+                Debug.Log($"move.x = {move.x}");
 
                 var jumpH = Input.GetAxis("HorizontalRight");
                 var jumpV = Input.GetAxis("VerticalRight");
-                //Debug.Log($"H/V {jumpH}/{jumpV}");
+                Debug.Log($"H/V {jumpH}/{jumpV}");
                 if (Mathf.Abs(jumpH) > 0.2 || Mathf.Abs(jumpV) > 0.2)
                 {
                     charge += Time.deltaTime;
                     charging = true;
                     stopJump = true;
                     Schedule<PlayerStopJump>().player = this;
-                    jumpTakeoff.x = jumpH;
-                    jumpTakeoff.y = jumpV;
+                    float smooth = 0.8f;
+                    jumpTakeoff.x = jumpTakeoff.x * smooth + jumpH * (1 - smooth);
+                    jumpTakeoff.y = jumpTakeoff.y * smooth + jumpV * (1 - smooth);
                 }
                 else if (charging)
                 {
@@ -144,19 +150,19 @@ namespace Platformer.Mechanics
                     velocity.x = velocity.x * model.jumpDeceleration;
                 }
             }
-            else if (jumpState == JumpState.Grounded)
+            else if (jumpState == JumpState.Grounded || jumpState == JumpState.Landed)
             {
                 // walking
-                if (move.x > 0.01f)
-                    spriteRenderer.flipX = false;
-                else if (move.x < -0.01f)
-                    spriteRenderer.flipX = true;
+                velocity.x = move.x * maxSpeed;
 
                 animator.SetBool("grounded", IsGrounded);
                 animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
-
-                velocity.x = move.x * maxSpeed;
             }
+
+            if (velocity.x > 0.01f)
+                spriteRenderer.flipX = true;
+            else if (velocity.x < -0.01f)
+                spriteRenderer.flipX = false;
 
             //targetVelocity = (move * maxSpeed);
         }
