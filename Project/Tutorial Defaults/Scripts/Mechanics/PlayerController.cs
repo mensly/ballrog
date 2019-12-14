@@ -146,8 +146,8 @@ namespace Platformer.Mechanics
                 stopJump = false;
                 if (velocity.y > 0)
                 {
-                    velocity.y = velocity.y * model.jumpDeceleration;
-                    velocity.x = velocity.x * model.jumpDeceleration;
+                    velocity.y *= model.jumpDeceleration;
+                    velocity.x *= model.jumpDeceleration;
                 }
             }
             else if (jumpState == JumpState.Grounded || jumpState == JumpState.Landed)
@@ -159,9 +159,9 @@ namespace Platformer.Mechanics
                 animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
             }
 
-            if (velocity.x > 0.01f)
+            if (move.x > 0.01f)
                 spriteRenderer.flipX = true;
-            else if (velocity.x < -0.01f)
+            else if (move.x < -0.01f)
                 spriteRenderer.flipX = false;
 
             //targetVelocity = (move * maxSpeed);
