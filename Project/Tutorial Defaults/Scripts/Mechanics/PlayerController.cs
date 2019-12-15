@@ -36,7 +36,8 @@ namespace Platformer.Mechanics
         public bool controlEnabled = true;
 
         bool jump;
-        Vector2 move;
+        Vector2 move = new Vector2();
+        bool firstMovement;
         SpriteRenderer spriteRenderer;
         internal Animator animator;
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
@@ -58,18 +59,28 @@ namespace Platformer.Mechanics
         {
             if (controlEnabled)
             {
-                move.x = Input.GetAxis("Horizontal");
-                if (Mathf.Abs(move.x) < 0.2f)
+                // movement
+                var moveX = Input.GetAxis("Horizontal");
+                if (Mathf.Abs(moveX) < 0.2f)
                 {
                     move.x = 0;
+                    firstMovement = false;
                 }
-                Debug.Log($"move.x = {move.x}");
+                else
+                {
+                    firstMovement = (Mathf.Abs(move.x) < 0.2f);
+                    
+                    Debug.Log($"moveX = {moveX}, firstMovement = {firstMovement}");
+                    move.x = moveX;
+                }
 
+                // charging
                 var jumpH = Input.GetAxis("HorizontalRight");
                 var jumpV = Input.GetAxis("VerticalRight");
-                Debug.Log($"H/V {jumpH}/{jumpV}");
+
                 if (Mathf.Abs(jumpH) > 0.2 || Mathf.Abs(jumpV) > 0.2)
                 {
+                    Debug.Log($"H/V {jumpH}/{jumpV}");
                     charge += Time.deltaTime;
                     charging = true;
                     stopJump = true;
@@ -156,6 +167,12 @@ namespace Platformer.Mechanics
                 velocity.x = move.x * maxSpeed;
 
                 animator.SetBool("grounded", IsGrounded);
+                animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+            }
+            else if (jumpState == JumpState.InFlight && firstMovement)
+            {
+                // bump-drift in flight
+                velocity.x += (Mathf.Sign(move.x) * maxSpeed) * 0.2f;
                 animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
             }
 
