@@ -17,6 +17,7 @@ namespace Platformer.Mechanics
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
+        public MovementControl movementControl;
 
         /// <summary>
         /// Max horizontal speed of the player.
@@ -60,7 +61,7 @@ namespace Platformer.Mechanics
             if (controlEnabled)
             {
                 // movement
-                var moveX = Input.GetAxis("Horizontal");
+                var moveX = Input.GetAxis("Horizontal") + movementControl.Horizontal;
                 if (Mathf.Abs(moveX) < 0.2f)
                 {
                     move.x = 0;
