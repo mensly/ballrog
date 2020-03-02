@@ -40,7 +40,7 @@ namespace Platformer.Mechanics
             model.endPanel.gameObject.SetActive(false);
             var previousLevel = model.level;
             Instantiate(model.level.NextLevel);
-            Destroy(previousLevel);
+            Destroy(previousLevel.gameObject);
             ResetPlayer();
             model.timer.Reset();
         }
@@ -56,7 +56,6 @@ namespace Platformer.Mechanics
         void ResetPlayer()
         {
             model.player.controlEnabled = true;
-            // model.player.animator.SetTarget()
         }
     }
 }
