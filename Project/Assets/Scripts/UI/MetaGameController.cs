@@ -1,5 +1,7 @@
 using Platformer.Mechanics;
 using Platformer.UI;
+using Platformer.Model;
+using Platformer.Core;
 using UnityEngine;
 
 namespace Platformer.UI
@@ -27,9 +29,12 @@ namespace Platformer.UI
 
         bool showMainCanvas = false;
 
+        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+
         void OnEnable()
         {
             _ToggleMainMenu(showMainCanvas);
+            model.endPanel.gameObject.SetActive(false);
         }
 
         /// <summary>

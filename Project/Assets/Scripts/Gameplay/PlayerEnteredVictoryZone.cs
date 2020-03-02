@@ -19,6 +19,8 @@ namespace Platformer.Gameplay
         {
             model.player.animator.SetTrigger("victory");
             model.player.controlEnabled = false;
+            model.timer.Stop();
+            model.endPanel.Show();
         }
     }
 }

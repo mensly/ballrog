@@ -8,6 +8,13 @@ public class Timer : MonoBehaviour
     Text text;
     float start;
     private float? stopTime = null;
+    public System.TimeSpan CurrentTime
+    {
+        get
+        {
+            return System.TimeSpan.FromSeconds(stopTime ?? Time.time - start);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +26,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = System.TimeSpan.FromSeconds(stopTime ?? Time.time - start).ToString("c");
+        text.text = CurrentTime.ToString("c");
     }
 
     public void Stop()
