@@ -28,10 +28,9 @@ public class Level : MonoBehaviour
         
     }
 
-    public void Restart()
+    public void Retry()
     {
         PlatformerModel model = Simulation.GetModel<PlatformerModel>();
         model.player.transform.position = SpawnPoint.position;
-        model.player.controlEnabled = true;
     }
 }
