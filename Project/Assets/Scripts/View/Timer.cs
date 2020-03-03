@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour
     {
         get
         {
-            return System.TimeSpan.FromSeconds(stopTime ?? Time.time - start);
+            return System.TimeSpan.FromSeconds((stopTime ?? Time.time) - start);
         }
     }
 
