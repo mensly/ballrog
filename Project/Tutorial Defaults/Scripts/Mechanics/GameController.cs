@@ -34,5 +34,28 @@ namespace Platformer.Mechanics
         {
             if (Instance == this) Simulation.Tick();
         }
+
+        public void NextLevel()
+        {
+            model.endPanel.gameObject.SetActive(false);
+            var previousLevel = model.level;
+            Instantiate(model.level.NextLevel);
+            Destroy(previousLevel.gameObject);
+            ResetPlayer();
+            model.timer.Reset();
+        }
+
+        public void RetryLevel()
+        {
+            model.endPanel.gameObject.SetActive(false);
+            model.level.Retry();
+            ResetPlayer();
+            model.timer.Reset();
+        }
+
+        void ResetPlayer()
+        {
+            model.player.controlEnabled = true;
+        }
     }
 }

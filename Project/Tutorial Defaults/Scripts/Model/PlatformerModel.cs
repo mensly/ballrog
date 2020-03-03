@@ -38,5 +38,10 @@ namespace Platformer.Model
         /// </summary>
         public float jumpDeceleration = 0.5f;
 
+        public Level level;
+
+        public EndPanel endPanel;
+
+        public Timer timer;
     }
 }
