@@ -72,7 +72,7 @@ namespace Platformer.Mechanics
                 {
                     firstMovement = (Mathf.Abs(move.x) < 0.2f);
                     
-                    Debug.Log($"moveX = {moveX}, firstMovement = {firstMovement}");
+                    // Debug.Log($"moveX = {moveX}, firstMovement = {firstMovement}");
                     move.x = moveX;
                 }
 
@@ -82,7 +82,7 @@ namespace Platformer.Mechanics
 
                 if (Mathf.Abs(jumpH) > 0.2 || Mathf.Abs(jumpV) > 0.2)
                 {
-                    Debug.Log($"H/V {jumpH}/{jumpV}");
+                    // Debug.Log($"H/V {jumpH}/{jumpV}");
                     charge += Time.deltaTime;
                     charging = true;
                     stopJump = true;
@@ -150,7 +150,7 @@ namespace Platformer.Mechanics
             {
                 // start jump
                 velocity = (-jumpTakeoff).normalized * Mathf.Min(charge * jumpTakeOffSpeed, jumpTakeOffSpeed * 2) * model.jumpModifier;
-                Debug.Log($"{velocity.x}/{velocity.y}");
+                // Debug.Log($"{velocity.x}/{velocity.y}");
 
                 jump = false;
             }
