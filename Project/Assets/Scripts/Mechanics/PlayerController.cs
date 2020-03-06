@@ -36,6 +36,7 @@ namespace Platformer.Mechanics
         /*internal new*/ public AudioSource audioSource;
         public Health health;
         public bool controlEnabled = true;
+        public float? iceVelocity;
 
         bool jump;
         Vector2 move = new Vector2();
@@ -105,6 +106,10 @@ namespace Platformer.Mechanics
                 //    stopJump = true;
                 //    Schedule<PlayerStopJump>().player = this;
                 //}
+            }
+            else if (iceVelocity.HasValue)
+            {
+                velocity.x = iceVelocity.Value;
             }
             else
             {
@@ -193,6 +198,12 @@ namespace Platformer.Mechanics
             Jumping,
             InFlight,
             Landed
+        }
+
+        public void StartIce()
+        {
+            iceVelocity = Mathf.Sign(velocity.x) * maxSpeed * 1.1f;
+            controlEnabled = false;
         }
     }
 }
