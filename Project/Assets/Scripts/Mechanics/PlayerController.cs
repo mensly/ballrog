@@ -174,7 +174,14 @@ namespace Platformer.Mechanics
                 velocity.x = move.x * maxSpeed;
 
                 animator.SetBool("grounded", IsGrounded);
-                animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+                if (iceVelocity.HasValue)
+                {
+                    animator.SetFloat("velocityX", 0);
+                }
+                else
+                {
+                    animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+                }
             }
             else if (jumpState == JumpState.InFlight && firstMovement)
             {
@@ -204,6 +211,12 @@ namespace Platformer.Mechanics
         {
             iceVelocity = Mathf.Sign(velocity.x) * maxSpeed * 1.1f;
             controlEnabled = false;
+        }
+
+        public void EndIce()
+        {
+            iceVelocity = null;
+            controlEnabled = true;
         }
     }
 }

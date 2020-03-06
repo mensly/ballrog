@@ -23,6 +23,6 @@ public class IceTiles : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        model.player.controlEnabled = true;
+        model.player.EndIce();
     }
 }
