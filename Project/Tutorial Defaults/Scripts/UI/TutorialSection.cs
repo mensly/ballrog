@@ -15,7 +15,6 @@ public class TutorialSection : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log(collider);
         var p = collider.gameObject.GetComponent<PlayerController>();
         if (p != null)
         {

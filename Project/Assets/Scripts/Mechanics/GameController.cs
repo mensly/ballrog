@@ -35,22 +35,34 @@ namespace Platformer.Mechanics
             if (Instance == this) Simulation.Tick();
         }
 
+        public void ShowAdAndNextLevel()
+        {
+            GetComponent<EnableAds>().ShowInterstitial(true);
+        }
+
         public void NextLevel()
         {
-            model.endPanel.gameObject.SetActive(false);
+            model.endPanel.Hide();
             var previousLevel = model.level;
             Instantiate(model.level.NextLevel);
             Destroy(previousLevel.gameObject);
             ResetPlayer();
             model.timer.Reset();
+            GetComponent<EnableAds>().RefreshBanner();
+        }
+
+        public void ShowAdAndRetryLevel()
+        {
+            GetComponent<EnableAds>().ShowInterstitial(false);
         }
 
         public void RetryLevel()
         {
-            model.endPanel.gameObject.SetActive(false);
+            model.endPanel.Hide();
             model.level.Retry();
             ResetPlayer();
             model.timer.Reset();
+            GetComponent<EnableAds>().RefreshBanner();
         }
 
         void ResetPlayer()

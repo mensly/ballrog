@@ -36,6 +36,7 @@ namespace Platformer.Mechanics
         /*internal new*/ public AudioSource audioSource;
         public Health health;
         public bool controlEnabled = true;
+        public float? iceVelocity;
 
         bool jump;
         Vector2 move = new Vector2();
@@ -72,7 +73,7 @@ namespace Platformer.Mechanics
                 {
                     firstMovement = (Mathf.Abs(move.x) < 0.2f);
                     
-                    Debug.Log($"moveX = {moveX}, firstMovement = {firstMovement}");
+                    // Debug.Log($"moveX = {moveX}, firstMovement = {firstMovement}");
                     move.x = moveX;
                 }
 
@@ -82,7 +83,7 @@ namespace Platformer.Mechanics
 
                 if (Mathf.Abs(jumpH) > 0.2 || Mathf.Abs(jumpV) > 0.2)
                 {
-                    Debug.Log($"H/V {jumpH}/{jumpV}");
+                    // Debug.Log($"H/V {jumpH}/{jumpV}");
                     charge += Time.deltaTime;
                     charging = true;
                     stopJump = true;
@@ -105,6 +106,10 @@ namespace Platformer.Mechanics
                 //    stopJump = true;
                 //    Schedule<PlayerStopJump>().player = this;
                 //}
+            }
+            else if (iceVelocity.HasValue)
+            {
+                velocity.x = iceVelocity.Value;
             }
             else
             {
@@ -150,7 +155,7 @@ namespace Platformer.Mechanics
             {
                 // start jump
                 velocity = (-jumpTakeoff).normalized * Mathf.Min(charge * jumpTakeOffSpeed, jumpTakeOffSpeed * 2) * model.jumpModifier;
-                Debug.Log($"{velocity.x}/{velocity.y}");
+                // Debug.Log($"{velocity.x}/{velocity.y}");
 
                 jump = false;
             }
@@ -169,7 +174,14 @@ namespace Platformer.Mechanics
                 velocity.x = move.x * maxSpeed;
 
                 animator.SetBool("grounded", IsGrounded);
-                animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+                if (iceVelocity.HasValue)
+                {
+                    animator.SetFloat("velocityX", 0);
+                }
+                else
+                {
+                    animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+                }
             }
             else if (jumpState == JumpState.InFlight && firstMovement)
             {
@@ -193,6 +205,18 @@ namespace Platformer.Mechanics
             Jumping,
             InFlight,
             Landed
+        }
+
+        public void StartIce()
+        {
+            iceVelocity = Mathf.Sign(velocity.x) * maxSpeed * 1.1f;
+            controlEnabled = false;
+        }
+
+        public void EndIce()
+        {
+            iceVelocity = null;
+            controlEnabled = true;
         }
     }
 }
