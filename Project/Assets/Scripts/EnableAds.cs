@@ -31,10 +31,6 @@ public class EnableAds : MonoBehaviour
             // Create a 320x50 banner at the top of the screen.
             bannerView = new BannerView(bannerAdId, AdSize.Banner, AdPosition.TopLeft);
             RefreshBanner();
-            interstitial = new InterstitialAd(interstitialAdId);
-            interstitial.OnAdFailedToLoad += Interstitial_OnAdFailedToLoad;
-            interstitial.OnAdClosed += Interstitial_OnAdClosed;
-            interstitial.OnAdLeavingApplication += Interstitial_OnAdLeavingApplication;
             RefreshInterstitial();
         });
     }
@@ -59,6 +55,14 @@ public class EnableAds : MonoBehaviour
     void RefreshInterstitial()
     {
         if (interstitialAdId == null) { return; }
+        if (interstitial != null)
+        {
+            interstitial.Destroy();
+        }
+        interstitial = new InterstitialAd(interstitialAdId);
+        interstitial.OnAdFailedToLoad += Interstitial_OnAdFailedToLoad;
+        interstitial.OnAdClosed += Interstitial_OnAdClosed;
+        interstitial.OnAdLeavingApplication += Interstitial_OnAdLeavingApplication;
 
         // Create an empty ad request.
         AdRequest request = new AdRequest.Builder()
@@ -70,17 +74,17 @@ public class EnableAds : MonoBehaviour
 
     public void ShowInterstitial(bool nextLevel)
     {
+        this.nextLevel = nextLevel;
         if (interstitialAdId == null)
         {
-            OnAdFinished();
+            StartCoroutine(OnAdFinished());
             return;
         }
         if (!interstitial.IsLoaded())
         {
-            OnAdFinished();
+            StartCoroutine(OnAdFinished());
             return;
         }
-        this.nextLevel = nextLevel;
         interstitial.Show();
     }
 
@@ -95,9 +99,9 @@ public class EnableAds : MonoBehaviour
         ShowInterstitial(false);
     }
 
-    private void OnAdFinished()
+    private IEnumerator OnAdFinished()
     {
-        RefreshInterstitial();
+        yield return new WaitForFixedUpdate();
         if (nextLevel)
         {
             GetComponent<GameController>().NextLevel();
@@ -106,20 +110,21 @@ public class EnableAds : MonoBehaviour
         {
             GetComponent<GameController>().RetryLevel();
         }
+        RefreshInterstitial();
     }
 
     private void Interstitial_OnAdClosed(object sender, EventArgs e)
     {
-        OnAdFinished();
+        UnityMainThreadDispatcher.Instance().Enqueue(OnAdFinished());
     }
 
     private void Interstitial_OnAdFailedToLoad(object sender, AdFailedToLoadEventArgs e)
     {
-        OnAdFinished();
+        UnityMainThreadDispatcher.Instance().Enqueue(OnAdFinished());
     }
 
     private void Interstitial_OnAdLeavingApplication(object sender, EventArgs e)
     {
-        OnAdFinished();
+        UnityMainThreadDispatcher.Instance().Enqueue(OnAdFinished());
     }
 }
