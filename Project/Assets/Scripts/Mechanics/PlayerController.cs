@@ -46,6 +46,7 @@ namespace Platformer.Mechanics
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
         bool charging;
         float charge = 0.5f;
+        internal bool catnip;
 
         public Bounds Bounds => collider2d.bounds;
 
@@ -64,6 +65,10 @@ namespace Platformer.Mechanics
             {
                 // movement
                 var moveX = Input.GetAxis("Horizontal") + movementControl.Horizontal;
+                if (catnip)
+                {
+                    moveX = -moveX;
+                }
                 if (Mathf.Abs(moveX) < 0.2f)
                 {
                     move.x = 0;
@@ -79,6 +84,10 @@ namespace Platformer.Mechanics
 
                 // charging
                 var jumpH = Input.GetAxis("HorizontalRight") + flingControl.Horizontal;
+                if (catnip)
+                {
+                    jumpH = -jumpH;
+                }
                 var jumpV = Input.GetAxis("VerticalRight") + flingControl.Vertical;
 
                 if (Mathf.Abs(jumpH) > 0.2 || Mathf.Abs(jumpV) > 0.2)

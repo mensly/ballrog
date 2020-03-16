@@ -35,11 +35,6 @@ namespace Platformer.Mechanics
             if (Instance == this) Simulation.Tick();
         }
 
-        public void ShowAdAndNextLevel()
-        {
-            GetComponent<EnableAds>().ShowInterstitial(true);
-        }
-
         public void NextLevel()
         {
             model.endPanel.Hide();
@@ -49,11 +44,6 @@ namespace Platformer.Mechanics
             ResetPlayer();
             model.timer.Reset();
             GetComponent<EnableAds>().RefreshBanner();
-        }
-
-        public void ShowAdAndRetryLevel()
-        {
-            GetComponent<EnableAds>().ShowInterstitial(false);
         }
 
         public void RetryLevel()
@@ -68,6 +58,7 @@ namespace Platformer.Mechanics
         void ResetPlayer()
         {
             model.player.controlEnabled = true;
+            model.player.catnip = false;
         }
     }
 }
