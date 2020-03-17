@@ -44,8 +44,8 @@ namespace Platformer.Mechanics
         SpriteRenderer spriteRenderer;
         internal Animator animator;
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-        bool charging;
-        float charge = 0.5f;
+        public bool charging;
+        public float charge = 0.5f;
         internal bool catnip;
 
         public Bounds Bounds => collider2d.bounds;
